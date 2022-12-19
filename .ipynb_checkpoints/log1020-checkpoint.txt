@@ -1,0 +1,45 @@
+date
+2022. 10. 20. (목) 09:31:15 UTC
+
+CUDA_VISIBLE_DEVICES=0 python3 -m torch.distributed.launch --nproc_per_node=1 train.py --dataset custom --split overlap --num_steps 10000 --fp16 --name sample_run
+train data : 473896
+val data : 59237
+test data : 59237
+****************************0************************************
+****************************0.1************************************
+****************************2************************************
+load_pretrained: grid-size from 7 to 35
+/mskim/2_55_experiment/datasets/custom
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Warning:  multi_tensor_applier fused unscale kernel is unavailable, possibly because apex was installed without --cuda_ext --cpp_ext. Using Python fallback.  Original ImportError was: ImportError('/usr/local/lib/python3.6/dist-packages/amp_C.cpython-36m-x86_64-linux-gnu.so: undefined symbol: _ZN3c104cuda20getDefaultCUDAStreamEs',)
+Warning:  apex was installed without --cpp_ext.  Falling back to Python flatten and unflatten.
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 524288.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 262144.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 131072.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 65536.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+
+date
+2022. 10. 21. (금) 14:58:36 UTC
